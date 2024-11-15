@@ -1,30 +1,19 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
         <meta charset="utf-8">
-
         <title>Examen 2 - Javascript</title>
-
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/tooltip.css">
-
         <script defer src="js/validation.js"></script>
-
     </head>
 
     <body>
-            
         <main id="conteneur_principale">
-
             <div id="conteneur_formulaire">
-
                 <h1 id="titre_formulaire">Grille d'auto-évaluation</h1>
-
-                <form id="formulaire_examen">
-                    
+                <form id="formulaire_examen" method="post" action="https://designweb-production.up.railway.app/submit" onsubmit= "return Verif()">    
                     <div class="ligne_formulaire ligne_deux_colonnes">
                         <div class="colonne_gauche">
                             <label for='numero_da' class="titre_saisie">Numéro de DA</label>
@@ -34,8 +23,10 @@
                         <div class="colonne_droite conteneur_icone_validation">
                             <div id="da_icone_erreur">
                                 <div class="tooltip">
-                                    <i class="fas fa-exclamation-circle icone_erreur"></i>
-                                    <span class="tooltiptext">Le numéro de DA doit être composé d'exactement 7 chiffres et débuté par 1 ou 2</span>
+                                    <i class="fas fa-exclamation-circle icone_erreur" id="erreur"></i>
+                                    <span id="tooltiptext">
+                                        Le numéro de DA doit être composé d'exactement 7 chiffres et débuté par 1 ou 2
+                                    </span>
                                 </div>
                             </div>
                             <!-- La classe hidden est déjà défini dans le css. Elle permet de masquer l'élément auquelle elle est ajouté. -->
@@ -43,7 +34,6 @@
                                 <i class="fas fa-check-circle icone_succes"></i> 
                             </div>
                         </div>
-                        
                     </div>    
                   
                     <div class="ligne_formulaire ligne_deux_colonnes">
@@ -74,17 +64,11 @@
                             <small id="message_declaration"></small>
                         </div>
                     </div>
-                    
-                    <button type="submit">Soumettre le formulaire</button>
-
+            
+                    <button onclick="Verif()" type="submit" id="Soumettre">Soumettre le formulaire</button>
                 </form>
-
-                
                 <i class="fas fa-images" id="bouton_changer_image_fond"></i>
             </div>
-
         </main>
-
     </body>
-
 </html>

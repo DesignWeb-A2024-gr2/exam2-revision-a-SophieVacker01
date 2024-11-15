@@ -4,13 +4,14 @@
  /* Tooltip container */
  .tooltip {
     position: relative;
-    display: inline-block;
+    display: none;
   }
   
   /* Tooltip text */
   .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 200px;
+    display: none;
+    width: 100px;
+    size: 15px;
     background-color: #555;
     color: #fff;
     text-align: center;

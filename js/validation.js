@@ -1,5 +1,57 @@
+let verificationspecial_regex = "!@#$%^&*()_+-=[]{}|;:'\",.<>?/`~\\";
+let erreur = getElementById('erreur');
+let DA = getElementById('numero_da').value;
 // Objet regex dont le pattern est de permettre seulement des chiffres
-const REGEX_SEULEMENT_CHIFFRE = /^\d+$/;
+let REGEX_SEULEMENT_CHIFFRE1 = /^\d+$/;
+
+//function Validation()
+//{
+    //let presencespecial = false;
+    //let presencelettre = false;
+
+    //for (let i = 0; i < DA.length; i++) {
+        //if (DA[i] == verificationspecial_regex){
+            //presencespecial = true;
+        //}
+
+        //if (DA[i] != REGEX_SEULEMENT_CHIFFRE) {
+            //presencelettre = true;
+        //}
+
+        //if (presencelettre == true && presencespecial == true){
+            //erreur.style.visibility = visible;
+        //}
+    //}
+//}
+
+const monFormulaire = document.getElementById("formulaire_examen");
+monFormulaire.addEventListener('submit', Verif);
+
+function Verif()
+{
+    for (let i = 0; i < DA.length; i++)
+    {
+        if (DA[i] != REGEX_SEULEMENT_CHIFFRE1)
+        {
+            erreur.style.display = block;
+            let formValide = false;
+            e.preventDefault;
+        }
+
+        else if (DA[i] == verificationspecial_regex)
+        {
+            erreur.style.display = block;
+            e.preventDefault;
+        }
+
+        else 
+        {
+            formValide = true;
+            monFormulaire.submit();
+        }  
+    }   
+    return formValide;
+}
 
 // Les éléments html du formulaire utilisés dans le script
 const inputNoDA = document.getElementById('numero_da');             // Le input du numéro de da
