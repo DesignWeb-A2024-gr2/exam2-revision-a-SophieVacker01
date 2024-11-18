@@ -13,7 +13,7 @@
         <main id="conteneur_principale">
             <div id="conteneur_formulaire">
                 <h1 id="titre_formulaire">Grille d'auto-évaluation</h1>
-                <form id="formulaire_examen" method="post" action="https://designweb-production.up.railway.app/submit" onsubmit= "return Verif()">    
+                <form id="formulaire_examen" method="post" action="https://designweb-production.up.railway.app/submit" onSubmit="return ValidationForm()">    
                     <div class="ligne_formulaire ligne_deux_colonnes">
                         <div class="colonne_gauche">
                             <label for='numero_da' class="titre_saisie">Numéro de DA</label>
@@ -24,7 +24,7 @@
                             <div id="da_icone_erreur">
                                 <div class="tooltip">
                                     <i class="fas fa-exclamation-circle icone_erreur" id="erreur"></i>
-                                    <span id="tooltiptext">
+                                    <span class="tooltiptext">
                                         Le numéro de DA doit être composé d'exactement 7 chiffres et débuté par 1 ou 2
                                     </span>
                                 </div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
             
-                    <button onclick="Verif()" type="submit" id="Soumettre">Soumettre le formulaire</button>
+                    <button type="submit" id="Soumettre">Soumettre le formulaire</button>
                 </form>
                 <i class="fas fa-images" id="bouton_changer_image_fond"></i>
             </div>
